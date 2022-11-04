@@ -1,5 +1,5 @@
 from datetime import datetime
-from email.policy import default
+# from email.policy import default
 from django.db import models
 
 # Create your models here.
@@ -27,7 +27,7 @@ class Song(models.Model):
         return self.title
 
 class Lyric(models.Model):
-    content = models.CharField(max_length=5000)
+    content = models.TextField(max_length=5000)
     Song_id = models.ForeignKey(Song, on_delete=models.CASCADE)
     
     def __str__(self):
